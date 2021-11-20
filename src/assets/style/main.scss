@@ -1,0 +1,17 @@
+// Setup
+@import 'setup/variables';
+@import 'setup/functions';
+
+// Basics
+@import 'basics/helpers';
+@import 'basics/base';
+
+// Components
+@import 'components/header';
+@import 'components/footer';
+@import 'components/forecast';
+@import 'components/weather';
+
+// Pages
+@import 'pages/about';
+@import 'pages/home';

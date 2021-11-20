@@ -1,0 +1,75 @@
+.home {
+    min-height: 70vh;
+    margin-top: 20px;
+
+    .select {
+        margin-inline-start: 5%;
+        width: 250px;
+        border: 1px solid var(--select-border);
+        border-radius: 0.25em;
+        padding: 0.25em 0.5em;
+        font-size: 1.25rem;
+        cursor: pointer;
+        line-height: 1.1;
+        background-color: #fff;
+        background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+
+        select {
+            background-color: transparent;
+            border: none;
+            padding: 0 1em 0 0;
+            margin: 0;
+            width: 100%;
+            font-family: inherit;
+            font-size: inherit;
+            cursor: inherit;
+            line-height: inherit;
+        }
+    }
+
+    .data {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-evenly;
+
+        .block-data {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            h2 {
+                font-style: italic;
+            }
+
+            .data-block {
+                margin-inline-end: 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+
+        .city-choice {
+            flex-direction: column;
+            gap: 10px;
+
+            .select {
+                width: 90%;
+                margin: auto;
+            }
+
+            .data {
+                text-align: center;
+                padding: 0 15px;
+
+                .data-info {
+                    width: 100%;
+                    height: 100px;
+                }
+            }
+        }
+    }
+}
