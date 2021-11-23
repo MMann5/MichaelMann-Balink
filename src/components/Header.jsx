@@ -1,16 +1,54 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import styled from 'styled-components'
+
+
+const Wrapper = styled.div`
+    min-height: 15vh;
+    text-align: center;
+    background-color: var(--clr6);
+`;
+
+const HeaderTitle = styled.div`
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin: 0;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.25rem;
+    }
+`;
+
+const Img = styled.img`
+    width: 50px;
+    height: 50px;
+`;
+
+const Title = styled.h1`
+    line-height: 7.5vh;
+    display: inline-block;
+    margin-inline-end: 50px;
+    margin-inline-start: 50px;
+    color: var(--clr1);
+    @media screen and (max-width: 768px) {
+        line-height: 7.5vh;
+        margin-inline-end: 25px;
+        margin-inline-start: 25px;
+    }
+`;
+
 
 export default function Header() {
     const { t } = useTranslation()
 
     return (
-        <div className="header">
-            <div className="title">
-                <img src="https://www.metaweather.com/static/img/weather/c.svg" alt="sun" />
-                <h1>{t('app_title')}</h1>
-                <img src="https://www.metaweather.com/static/img/weather/lc.svg" alt="cloud" />
-            </div>
-        </div>
+        <Wrapper>
+            <HeaderTitle>
+                <Img src="https://www.metaweather.com/static/img/weather/c.svg" alt="sun" />
+                <Title>{t('app_title')}</Title>
+                <Img src="https://www.metaweather.com/static/img/weather/t.svg" alt="cloud" />
+            </HeaderTitle>
+        </Wrapper>
     )
 }

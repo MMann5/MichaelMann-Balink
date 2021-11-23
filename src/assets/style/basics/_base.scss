@@ -23,6 +23,7 @@ body {
     margin: 0;
     background-color: $clr1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: $clr6;
 }
 
 a {
@@ -30,6 +31,6 @@ a {
 }
 
 
-ul {
-    list-style-type: none;
+main {
+    min-height: 73vh;
 }

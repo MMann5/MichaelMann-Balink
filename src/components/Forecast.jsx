@@ -1,6 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Weather from './Weather'
+
+
+const WrapperForecast = styled.section`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+    margin: 0;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+`;
 
 export default function Forecast({ data }) {
     const [forecasts, setForecasts] = useState([])
@@ -25,13 +40,14 @@ export default function Forecast({ data }) {
         setForecasts(forecastData)
     }, [data])
 
+
     return (
-        <section className="container">
+        <WrapperForecast>
             {forecasts.map((f, idx) => (
-                <Link to={`/city/about/${f.id}`} key={idx} className="forecast forecast-link">
+                <Link to={`/city/about/${f.id}`} key={idx}>
                     <Weather f={f} />
                 </Link>
             ))}
-        </section>
+        </WrapperForecast>
     )
 }
