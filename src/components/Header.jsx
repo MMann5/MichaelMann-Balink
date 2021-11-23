@@ -4,12 +4,14 @@ import styled from 'styled-components'
 
 
 const Wrapper = styled.div`
-    min-height: 15vh;
-    text-align: center;
+    min-height: 10vh;
     background-color: var(--clr6);
 `;
 
 const HeaderTitle = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
@@ -26,7 +28,6 @@ const Img = styled.img`
 `;
 
 const Title = styled.h1`
-    line-height: 7.5vh;
     display: inline-block;
     margin-inline-end: 50px;
     margin-inline-start: 50px;
@@ -47,7 +48,7 @@ export default function Header() {
             <HeaderTitle>
                 <Img src="https://www.metaweather.com/static/img/weather/c.svg" alt="sun" />
                 <Title>{t('app_title')}</Title>
-                <Img src="https://www.metaweather.com/static/img/weather/t.svg" alt="cloud" />
+                <Img src="https://www.metaweather.com/static/img/weather/s.svg" alt="cloud" />
             </HeaderTitle>
         </Wrapper>
     )

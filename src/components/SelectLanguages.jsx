@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { languages } from '../services/languages'
 import styled from 'styled-components'
+
+import { languages } from '../services/languages'
 
 
 const Select = styled.select`
@@ -15,8 +16,8 @@ const Select = styled.select`
 `;
 
 const Option = styled.option`
-    background-color: var(--clr6);
-    color: var(--clr2);
+    background-color: var(--clr1);
+    color: var(--clr6);
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;

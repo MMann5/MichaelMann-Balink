@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
+import { useLocation } from 'react-router-dom'
+
 import { getDate, windDirection } from '../services/functions'
 
 
@@ -10,14 +12,14 @@ const Forecast = styled.div`
     align-items: center;
     width: 250px;
     height: auto;
-    background-color: var(--clr2);
+    background-color: var(--clr6);
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: var(--clr6);
+    color: var(--clr1);
 
     &:hover {
         transform: scale(1.05);
@@ -42,6 +44,9 @@ const Img = styled.img`
 
 export default function Weather({ f }) {
     const { t } = useTranslation()
+    const location = useLocation()
+    const page = location.pathname.split('/')[2]
+    console.log('page', page);
 
     return (
         <Forecast>

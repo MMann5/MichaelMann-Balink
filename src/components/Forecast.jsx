@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+
 import Weather from './Weather'
 
 
@@ -45,7 +46,7 @@ export default function Forecast({ data }) {
         <WrapperForecast>
             {forecasts.map((f, idx) => (
                 <Link to={`/city/about/${f.id}`} key={idx}>
-                    <Weather f={f} />
+                    <Weather f={f}></Weather>
                 </Link>
             ))}
         </WrapperForecast>

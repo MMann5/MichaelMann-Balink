@@ -22,15 +22,20 @@ html {
 body {
     margin: 0;
     background-color: $clr1;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: $clr6;
 }
 
 a {
     text-decoration: none;
+    color: #fff;
 }
 
-
 main {
-    min-height: 73vh;
+    min-height: 77vh;
+}
+
+.not-active {
+    background-color: #000000;
 }

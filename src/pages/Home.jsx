@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { saveToStorage, loadFromStorage } from '../services/functions'
 import axios from 'axios'
+
+import { saveToStorage, loadFromStorage } from '../services/functions'
+
 import Forecast from '../components/Forecast'
 import Loader from '../components/Loader';
 import SelectCity from '../components/SelectCity'

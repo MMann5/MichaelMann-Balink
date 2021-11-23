@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
+
 import { america, asia, europe } from '../services/variables'
 
 
@@ -14,7 +15,7 @@ const WrapperSelect = styled.div`
     font-size: 1.25rem;
     cursor: pointer;
     line-height: 1.1;
-    background-color: var(--clr6);
+    background-color: transparent;
 
     @media (max-width: 768px) {
         width: 90%;
@@ -23,15 +24,16 @@ const WrapperSelect = styled.div`
 
 const CitySelector = styled.select`
     background-color: var(--clr6);
-    color: var(--clr2);
+    color: var(--clr1);
     border: none;
-    padding: 0 1em 0 0;
+    padding: 0.5rem;
     margin: 0;
     width: 100%;
     font-family: inherit;
     font-size: inherit;
     cursor: inherit;
     line-height: inherit;
+    border-radius: 0.25em;
 `;
 
 

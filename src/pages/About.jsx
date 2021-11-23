@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import styled from 'styled-components'
+
 import { loadFromStorage } from '../services/functions'
+
 import BackBtn from '../components/BackBtn'
 import Weather from '../components/Weather'
 import Sources from '../components/Sources'
@@ -38,7 +40,9 @@ export default function About() {
     const renderPrevision = (data, id) => {
         let prevision = data.consolidated_weather.filter(f => f.id === parseInt(id))[0]
         return (
-            <Weather f={prevision} />
+            <Link to={`/`}>
+                <Weather f={prevision} />
+            </Link>
         )
     }
 
