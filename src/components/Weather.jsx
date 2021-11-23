@@ -12,8 +12,8 @@ const Forecast = styled.div`
     align-items: center;
     width: 250px;
     height: auto;
-    background-color: var(--clr6);
-    border-radius: 5px;
+    background-color: var(--clr2);
+    border-radius: var(--borderRad2);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     transition: all 0.3s ease-in-out;
     cursor: pointer;

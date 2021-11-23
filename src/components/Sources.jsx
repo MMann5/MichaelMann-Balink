@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
-import weather from '../assets/icon/weather.png'
+import weather from '../assets/icon/globe.png'
 
 
 const WrapperSources = styled.div`
@@ -20,7 +20,7 @@ const Icon = styled.div`
 
 const SourcesLink = styled.a`
     align-self: center;
-    color: var(--clr6);
+    color: var(--clr1);
     text-decoration: none;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
@@ -33,21 +33,28 @@ const SourcesLink = styled.a`
     }
 `;
 
+const TitleSources = styled.h3`
+    font-size: 1.5rem;
+    color : var(--clr1);
+`;
+
+const SourcesContainer = styled.ul``;
+
 
 export default function Sources({ data }) {
     const { t } = useTranslation()
 
     return (
         <WrapperSources>
-            <h3>{t('sources_data')}</h3>
-            <ul>{data.sources.map((source, idx) => {
+            <TitleSources>{t('sources_data')}</TitleSources>
+            <SourcesContainer>{data.sources.map((source, idx) => {
                 return (
                     <Icon key={idx}>
-                        <img src={weather} alt='icon' />
+                        <img src={weather} alt='icon' style={{ width: 40, height: 40 }} />
                         <SourcesLink href={source.url} target="_blank" rel="noreferrer">{source.title}</SourcesLink>
                     </Icon>
                 )
-            })}</ul>
+            })}</SourcesContainer>
         </WrapperSources>
     )
 }

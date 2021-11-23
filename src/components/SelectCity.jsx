@@ -8,7 +8,7 @@ import { america, asia, europe } from '../services/variables'
 const WrapperSelect = styled.div`
     margin-inline-start: 5%;
     margin-top: 1rem;
-    width: 250px;
+    width: 280px;
     border: 1px solid var(--select-border);
     border-radius: 0.25em;
     padding: 0.25em 0.5em;
@@ -23,7 +23,7 @@ const WrapperSelect = styled.div`
 `;
 
 const CitySelector = styled.select`
-    background-color: var(--clr6);
+    background-color: black;
     color: var(--clr1);
     border: none;
     padding: 0.5rem;

@@ -11,12 +11,17 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    
 `;
 
 const Title = styled.h4`
     font-style: italic;
-    color: var(--clr6);
+    color: var(--clr1);
+    align-items: center;
+
+    @media (max-width:1675px) {
+        color: var(--clr6);
+    }
 `;
 
 

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
     min-height: 10vh;
-    background-color: var(--clr6);
+    background-color: var(--clr2);
 `;
 
 const HeaderTitle = styled.div`

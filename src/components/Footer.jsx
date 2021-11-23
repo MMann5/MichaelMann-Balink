@@ -7,7 +7,7 @@ import SelectLanguages from './SelectLanguages'
 
 const Wrapper = styled.div`
     min-height: 10vh;
-    background-color: var(--clr6);
+    background-color: var(--clr2);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 const Paragraph = styled.h3`
     margin: 0;
     font-style: italic;
-    `;
+`;
 
 
 export default function Footer() {

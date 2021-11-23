@@ -1,7 +1,7 @@
 {
     "app_title": "info Météo",
     "language": "Langues",
-    "select_city" : "Selectionner une ville",
+    "select_city" : "Selectionnez une ville",
     "time_hour" : "Heure",
     "time_sunrise" : "Lever du soleil",
     "time_sunset" : "Coucher du soleil",

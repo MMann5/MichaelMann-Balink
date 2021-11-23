@@ -5,13 +5,14 @@ import styled from 'styled-components'
 
 
 const Btn = styled.button`
-    background-color: var(--clr6);
+    background-color: var(--clr2);
     border-radius: var(--borderRad2);
     cursor: pointer;
     margin: 20px;
     padding: 1em 2em;
     font-weight: bold;
         &:hover,&:focus {
+            background-color: var(--clr3);
             box-shadow: 0 0 40px 40px var(--clr4) inset;
         }
     @media (max-width: 768px) {
