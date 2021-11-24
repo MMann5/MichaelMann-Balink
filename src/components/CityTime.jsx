@@ -14,29 +14,37 @@ const Wrapper = styled.div`
     
 `;
 
-const Title = styled.h4`
-    font-style: italic;
-    color: var(--clr1);
+const Title = styled.h3`
+    color: var(--clr6);
     align-items: center;
 
-    @media (max-width:1675px) {
-        color: var(--clr6);
+    @media (max-width: 768px) {
+        color: var(--clr1);
     }
 `;
 
 
 export default function CityTime({ city }) {
+    const { time, sun_rise, sun_set } = city
     const { t } = useTranslation()
 
     const getTimes = (title, data) => {
         return <Title>{t(`${title}`)} : {data ? getHour(data) : '...'}</Title>
     }
 
+    const displayTimes = () => {
+        return (
+            <>
+                {getTimes('sunrise', sun_rise)}
+                {getTimes('sunset', sun_set)}
+                {getTimes('time', time)}
+            </>
+        )
+    }
+
     return (
         <Wrapper>
-            {getTimes('time_hour', city.time)}
-            {getTimes('time_sunrise', city.sun_rise)}
-            {getTimes('time_sunset', city.sun_set)}
+            {displayTimes()}
         </Wrapper>
     )
 }

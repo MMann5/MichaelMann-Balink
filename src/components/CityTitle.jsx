@@ -2,6 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 
 
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--clr6);
+
+@media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    color: var(--clr1);
+}`;
+
 const Title = styled.h1`
     font-size: 2.5em;
     margin-bottom: 0;
@@ -13,31 +25,14 @@ const Subtitle = styled.h2`
     font-style: italic;
 `;
 
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--clr1);
-
-@media (max-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
-}
-
-@media (max-width: 1675px) {
-    color: var(--clr6);
-}
-`;
-
 
 export default function CityTitle({ city }) {
-
-    if (!city) return '...'
+    const { title, parent } = city;
 
     return (
         <Wrapper>
-            <Title>{city.title},</Title>
-            <Subtitle>{city.parent.title}</Subtitle>
+            <Title>{title},</Title>
+            <Subtitle>{parent.title}</Subtitle>
         </Wrapper>
     )
 }

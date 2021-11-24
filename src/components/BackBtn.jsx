@@ -4,6 +4,10 @@ import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 
+const WrapperBtn = styled.div`
+    text-align: center;
+`;
+
 const Btn = styled.button`
     background-color: var(--clr2);
     border-radius: var(--borderRad2);
@@ -26,9 +30,9 @@ const Btn = styled.button`
 export default function BackBtn() {
     const { t } = useTranslation()
     return (
-        <>
+        <WrapperBtn>
             <Btn className="go-back"><Link to="/">{t('back')}</Link></Btn>
-        </>
+        </WrapperBtn>
     )
 }
 

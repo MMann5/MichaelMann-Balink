@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useLocation, Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -9,6 +8,7 @@ import BackBtn from '../components/BackBtn'
 import Weather from '../components/Weather'
 import Sources from '../components/Sources'
 import CityTitle from '../components/CityTitle'
+import Loader from '../components/Loader'
 
 
 const Wrapper = styled.div`
@@ -27,7 +27,6 @@ const Wrapper = styled.div`
 
 export default function About() {
     const [data, setData] = useState(null)
-    const { t } = useTranslation()
 
     const location = useLocation()
     const id = location.pathname.split('/')[3]
@@ -37,23 +36,24 @@ export default function About() {
         setData(city)
     }, []);
 
-    const renderPrevision = (data, id) => {
-        let prevision = data.consolidated_weather.filter(f => f.id === parseInt(id))[0]
+    const renderPrevision = (id) => {
+        const prevision = loadFromStorage('forecasts')
+        const day = prevision.filter(f => f.id === parseInt(id))[0]
         return (
             <Link to={`/`}>
-                <Weather f={prevision} />
+                <Weather f={day} />
             </Link>
         )
     }
 
-    if (!data) return <div>{t('loading_data')}</div>
+    if (!data) return <Loader />
 
     return (
         <>
             <BackBtn />
             <CityTitle city={data} />
             <Wrapper>
-                {renderPrevision(data, id)}
+                {renderPrevision(id)}
                 <Sources data={data} />
             </Wrapper >
         </>

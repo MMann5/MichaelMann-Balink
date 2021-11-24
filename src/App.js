@@ -11,13 +11,7 @@ export default function App() {
       <main>
         <Switch>
           {routes.map((route) => (
-            <Route
-              key={route.path}
-              exact
-              component={route.component}
-              path={route.path}
-            />
-          ))}
+            <Route key={route.path} exact component={route.component} path={route.path} />))}
         </Switch>
       </main>
       <Footer />

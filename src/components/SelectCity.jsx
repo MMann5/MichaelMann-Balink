@@ -6,7 +6,6 @@ import { america, asia, europe } from '../services/variables'
 
 
 const WrapperSelect = styled.div`
-    margin-inline-start: 5%;
     margin-top: 1rem;
     width: 280px;
     border: 1px solid var(--select-border);

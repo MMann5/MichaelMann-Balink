@@ -1,5 +1,6 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
+
 import common_en from './translation/en/translation.json'
 import common_fr from './translation/fr/translation.json'
 import common_he from './translation/he/translation.json'

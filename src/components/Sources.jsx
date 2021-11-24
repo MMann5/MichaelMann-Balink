@@ -13,6 +13,13 @@ const WrapperSources = styled.div`
     }
 `;
 
+const TitleSources = styled.h3`
+    font-size: 1.5rem;
+    color : var(--clr1);
+`;
+
+const SourcesContainer = styled.ul``;
+
 const Icon = styled.div`
     display: flex;
     align-self: flex-end;
@@ -33,28 +40,26 @@ const SourcesLink = styled.a`
     }
 `;
 
-const TitleSources = styled.h3`
-    font-size: 1.5rem;
-    color : var(--clr1);
-`;
-
-const SourcesContainer = styled.ul``;
-
 
 export default function Sources({ data }) {
+    const { sources } = data
     const { t } = useTranslation()
+
+    const Link = sources.map((source, idx) => {
+        return (
+            <Icon key={idx}>
+                <img src={weather} alt='icon' style={{ width: 40, height: 40 }} />
+                <SourcesLink href={source.url} target="_blank" rel="noreferrer">{source.title}</SourcesLink>
+            </Icon>
+        )
+    })
 
     return (
         <WrapperSources>
             <TitleSources>{t('sources_data')}</TitleSources>
-            <SourcesContainer>{data.sources.map((source, idx) => {
-                return (
-                    <Icon key={idx}>
-                        <img src={weather} alt='icon' style={{ width: 40, height: 40 }} />
-                        <SourcesLink href={source.url} target="_blank" rel="noreferrer">{source.title}</SourcesLink>
-                    </Icon>
-                )
-            })}</SourcesContainer>
+            <SourcesContainer>
+                {Link}
+            </SourcesContainer>
         </WrapperSources>
     )
 }

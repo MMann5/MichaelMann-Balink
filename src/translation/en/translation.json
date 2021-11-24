@@ -6,7 +6,6 @@
         "time_hour" : "Time",
         "time_sunrise" : "Sunrise",
         "time_sunset" : "Sunset",
-        "loading_data" : "..loading",
         "sources_data":"Sources",
         "data_humidity": "Humidity",
         "data_visibility": "Visibility",

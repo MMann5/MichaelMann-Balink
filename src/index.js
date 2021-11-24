@@ -6,11 +6,10 @@ import i18next from './i18n'
 import './assets/style/main.scss';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios'
+import Loader from '../src/components/Loader'
 
 const loadingMarkup = (
-  <div>
-    <h3>Loading..</h3>
-  </div>
+  <Loader />
 )
 
 const lang = localStorage.getItem('lang' || 'en')

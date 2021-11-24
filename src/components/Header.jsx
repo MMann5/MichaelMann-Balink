@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 
 const Wrapper = styled.div`
-    min-height: 10vh;
+    min-height: 5vh;
     background-color: var(--clr2);
 `;
 

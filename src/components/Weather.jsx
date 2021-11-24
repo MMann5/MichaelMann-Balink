@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
-import { useLocation } from 'react-router-dom'
 
 import { getDate, windDirection } from '../services/functions'
 
 
-const Forecast = styled.div`
+const ForecastWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,10 +24,16 @@ const Forecast = styled.div`
         transform: scale(1.05);
     }
 
+    @media screen and (max-width: 1800px) {
+        width: 180px;
+    }
+
     @media screen and (max-width: 768px) {
         margin: auto;
         width: 90%;
     }
+    
+    
 `;
 
 const Info = styled.h3``;
@@ -44,26 +49,24 @@ const Img = styled.img`
 
 export default function Weather({ f }) {
     const { t } = useTranslation()
-    const location = useLocation()
-    const page = location.pathname.split('/')[2]
-    console.log('page', page);
+    const { date, state, min, max, direction, speed, humidity, visibility, pressure, predictability } = f
 
     return (
-        <Forecast>
-            <Info>{getDate(f.applicable_date)}</Info>
-            <Text>{t(`${f.weather_state_abbr}`)}</Text>
-            <Img src={`https://www.metaweather.com/static/img/weather/png/64/${f.weather_state_abbr}.png`} alt="icon" />
-            <Text>{t('data_max')} : {parseInt(f.max_temp)}°C</Text>
-            <Text>{t('data_min')} : {parseInt(f.min_temp)}°C</Text>
-            <Text>{windDirection(f.wind_direction_compass)} {parseInt(f.wind_speed)} km/h</Text>
+        <ForecastWrapper>
+            <Info>{getDate(date)}</Info>
+            <Text>{t(`${state}`)}</Text>
+            <Img src={`https://www.metaweather.com/static/img/weather/png/64/${state}.png`} alt="icon" />
+            <Text>{t('data_max')} : {parseInt(max)}°C</Text>
+            <Text>{t('data_min')} : {parseInt(min)}°C</Text>
+            <Text>{windDirection(direction)} {parseInt(speed)} km/h</Text>
             <Info>{t('data_humidity')}</Info>
-            <Text>{f.humidity}%</Text>
+            <Text>{humidity}%</Text>
             <Info>{t('data_visibility')}</Info>
-            <Text>{f.visibility.toFixed(1)} km</Text>
+            <Text>{visibility.toFixed(1)} km</Text>
             <Info>{t('data_pressure')}</Info>
-            <Text>{parseInt(f.air_pressure)} mb</Text>
+            <Text>{parseInt(pressure)} mb</Text>
             <Info>{t('data_confidence')}</Info>
-            <Text>{f.predictability} %</Text>
-        </Forecast>
+            <Text>{predictability} %</Text>
+        </ForecastWrapper>
     )
 }

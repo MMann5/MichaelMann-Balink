@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+import { saveToStorage } from '../services/functions'
 import Weather from './Weather'
 
 
@@ -21,24 +22,29 @@ const WrapperForecast = styled.section`
 export default function Forecast({ data }) {
     const [forecasts, setForecasts] = useState([])
 
+
     useEffect(() => {
-        const forecastData = data.consolidated_weather.map(f => {
-            return ({
-                id: f.id,
-                weather_state_abbr: f.weather_state_abbr,
-                applicable_date: f.applicable_date,
-                weather_state_name: f.weather_state_name,
-                min_temp: f.min_temp,
-                max_temp: f.max_temp,
-                wind_direction_compass: f.wind_direction_compass,
-                wind_speed: f.wind_speed,
-                humidity: f.humidity,
-                visibility: f.visibility,
-                air_pressure: f.air_pressure,
-                predictability: f.predictability
-            })
+        const forecastData = data.consolidated_weather.map((
+            { id,
+                weather_state_abbr: state,
+                applicable_date: date,
+                weather_state_name: name,
+                min_temp: min,
+                max_temp: max,
+                wind_direction_compass: direction,
+                wind_speed: speed,
+                humidity,
+                visibility,
+                air_pressure: pressure,
+                predictability
+            }) => {
+            return {
+                id, state, date, name, min, max, direction, speed, humidity,
+                visibility, pressure, predictability
+            }
         })
         setForecasts(forecastData)
+        saveToStorage('forecasts', forecastData)
     }, [data])
 
 

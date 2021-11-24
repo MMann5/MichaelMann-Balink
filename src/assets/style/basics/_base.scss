@@ -10,7 +10,7 @@ html {
     &::-webkit-scrollbar-track {
         border-radius: var(--borderRad2);
         margin: 0 5px;
-        background-color: rgba($color: #000000, $alpha: 0.60);
+        background-color: rgba($color: #BA5A36, $alpha: 0.60);
     }
 
     &::-webkit-scrollbar-thumb {
@@ -22,10 +22,10 @@ html {
 body {
     margin: 0;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: url('../../icon/pexels-sami-anas-5137664.jpg') no-repeat center / cover;
+    background: url('../../icon/546111.jpg') no-repeat center / cover;
 
     @media (max-width: 768px) {
-        background: url('../../icon/pexels-sami-anas-5137664.jpg');
+        background: url('../../icon/546111.jpg');
     }
 }
 
@@ -35,5 +35,7 @@ a {
 }
 
 main {
-    min-height: 77vh;
+    min-height: 82vh;
+    max-width: 1800px;
+    margin: 0 auto;
 }
