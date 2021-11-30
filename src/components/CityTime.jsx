@@ -29,14 +29,14 @@ export default function CityTime({ city }) {
     const { t } = useTranslation()
 
     const getTimes = (title, data) => {
-        return <Title>{t(`${title}`)} : {data ? getHour(data) : '...'}</Title>
+        return <Title>{t(`${title}`)} : {getHour(data)}</Title>
     }
 
     const displayTimes = () => {
         return (
             <>
-                {getTimes('sunrise', sun_rise)}
-                {getTimes('sunset', sun_set)}
+                {getTimes('sun_rise', sun_rise)}
+                {getTimes('sun_set', sun_set)}
                 {getTimes('time', time)}
             </>
         )
